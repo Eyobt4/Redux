@@ -1,17 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+const initialState = localStorage.getItem("counter")?JSON.parse(localStorage.getItem("counter")):{
     count: 0
 }
+console.log(initialState)
 const counterSlice = createSlice({
     name: 'counter',
     initialState,
     reducers:{
         increament: (state)=>{
-            state.count++;
+            ++state.count;
+            localStorage.setItem("counter",JSON.stringify(state))
         },
         decrement: (state)=>{
-            state.count--;
+
+            --state.count;
+            localStorage.setItem("counter",JSON.stringify(state))
         },
     }
 });
