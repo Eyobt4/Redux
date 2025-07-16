@@ -1,19 +1,19 @@
+// state changing function write here
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    count: 0
+    cart: []
 }
 const counterSlice = createSlice({
     name: 'counter',
     initialState,
     reducers:{
-        increament: (state)=>{
-            state.count++;
+        AddToCart: (state,action)=>{
+            state.cart.push(action.payload)
         },
-        decrement: (state)=>{
-            state.count--;
-        },
+
     }
 });
-export const {increament,decrement} = counterSlice.actions;
+
+export const {AddToCart} = counterSlice.actions;
 export default counterSlice.reducer;

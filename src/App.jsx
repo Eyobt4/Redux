@@ -1,32 +1,18 @@
-// dispach functions to call in html
-import React from 'react'
-import { useSelector,useDispatch } from 'react-redux'
-import { increament,decrement } from './app/counterSlice'
-import Header from './Header'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Cart from "./Cart";
+import Home from "./pages/Home";
 
 const Counter = () => {
-  const count = useSelector((state)=> state.counter.count);
-  const dispatch = useDispatch();
   return (
     <>
-    <Header/>
-    <div>
-      <h1>T-shirt</h1>
-      <h2>Size: Medium</h2>
-      <button onClick={()=>dispatch(increament())}>Add to cart</button>
-    </div>
-    <div>
-      <h1>T-shirt</h1>
-      <h2>Size: Medium</h2>
-      <button onClick={()=>dispatch(increament())}>Add to cart</button>
-    </div>
-    <div>
-      <h1>T-shirt</h1>
-      <h2>Size: Medium</h2>
-      <button onClick={()=>dispatch(increament())}>Add to cart</button>
-    </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </BrowserRouter>
     </>
-  )
-}
+  );
+};
 
-export default Counter
+export default Counter;
