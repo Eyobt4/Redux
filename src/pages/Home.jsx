@@ -1,3 +1,4 @@
+// show mapped list of items in home page
 import React from 'react'
 import Header from '../Header';
 import { useDispatch, useSelector } from 'react-redux';
@@ -21,6 +22,7 @@ const Home = () => {
                     <button onClick={()=>dispatch(AddToCart(i))}><Link>Add to Cart</Link></button>
                 </div>)
             })}
+            
         </div>
     </div>
   )

@@ -1,3 +1,4 @@
+// route between pages
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Cart from "./Cart";
 import Home from "./pages/Home";
